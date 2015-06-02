@@ -1,27 +1,21 @@
-<%if current_user%>
-	You are logged in as <%= current_user.first_name if current_user %>
-
-	<%= link_to 'LOG OUT!', logout_path, method: :delete %>
-
-<%else %>
-	<%= link_to 'SIGN UP', users_new_path %>
-	<%= link_to 'LOG IN!', login_path%>
-<%end%>
-
-
-<h1>Movie Blog</h1>
+<h1>Movie List</h1>
 
 	<h2><% @movies.each do |m| %> </h2>
-		<li>Title: <%= m.title %></li>
-		<li> Image: <%= m.image %></li>
-		<li> Year: <%= m.year %></li>
-		<li> Plot: <%= m.plot %></li>
+
+	<ul>
+		<p>Title: <%= m.title %></p>
+		<p> <%= image_tag m.image, :size => "80x80" %></p>
+		<p> Year: <%= m.year %></p>
+		<p> Plot: <%= m.plot %></p>
 
 		<%= link_to "See More", movie_path(m.id)  %>
 
-
+	</ul>
 	<% end %>
+
 	<br>
 	<br>
 
-<%= link_to "Add a new movie!", new_movie_path %>
+	<%= link_to 'Home', root_path %>
+<!-- 
+<%= link_to "Add a new movie!", new_movie_path %> -->
