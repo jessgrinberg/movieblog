@@ -5,11 +5,13 @@ You are logged in as <%= current_user.first_name%> <%= link_to 'Log Out', logout
 <p> First Name: <%= @user.first_name %> </p>
 <p><%#= image_tag @movie.image.url(:large)%></p>
 <br>
-<p> Last Name: <%= @user.first_name%> </p>
+<p> Last Name: <%= @user.last_name%> </p>
 <br>
-<p> Email: <%= @user.first_name%> </p>
+<p> Email: <%= @user.email%> </p>
 <br>
 
 <%= link_to 'Edit', edit_user_path(@user) %> 
 
  <%= link_to "Delete your profile", root_path, method: :delete, data: { confirm: "R u sure?"} %>
+
+
