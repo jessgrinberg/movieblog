@@ -4,7 +4,9 @@
 
 	<ul>
 		<p>Title: <%= m.title %></p>
-		<p> <%= image_tag m.image, :size => "80x80" %></p>
+		<p> <%#= image_tag m.image, :size => "80x80" %></p>
+		<p><%#= image_tag @movie.image.url(:large)%></p>
+				<p> <%= image_tag m.image.url(:small) %></p>
 		<p> Year: <%= m.year %></p>
 		<p> Plot: <%= m.plot %></p>
 

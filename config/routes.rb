@@ -19,15 +19,14 @@ Rails.application.routes.draw do
   # put 'movies/:movie_id/reviews/:id' => 'reviews#update'
   # delete 'movies/:movie_id/reviews/:id' => 'reviews#destroy'
 
-  #get 'home' => 'movies#home'
 
-  # get 'movies/' => 'movies#index'
-  # get 'movies/new' => 'movies#new', as: :new_movie
-  # get 'movies/:id' => 'movies#show', as: :movie
-  # post 'movies/' => 'movies#create'
-  # get 'movies/:id/edit' => 'movies#edit', as: :edit_movie
-  # patch 'movies/:id' => 'movies#update'
-  # delete 'movies/:id' => 'movies#destroy'
+  get 'movies/' => 'movies#index'
+  get 'movies/new' => 'movies#new', as: :new_movie
+  get 'movies/:id' => 'movies#show', as: :movie
+  post 'movies/' => 'movies#create'
+  get 'movies/:id/edit' => 'movies#edit', as: :edit_movie
+  patch 'movies/:id' => 'movies#update'
+  delete 'movies/:id' => 'movies#destroy'
 
   resources :movies do
   resources :reviews
@@ -53,9 +52,14 @@ Rails.application.routes.draw do
 #                   DELETE /movies/:id(.:format)                        movies#destroy
 
 
+
   get "users" => "welcome#index"
   get "users/new" => "users#new"
-  post "users" => "users#create"
+  get 'users/:id' => 'users#show', as: :user
+  post 'users/' => 'users#create'
+  get 'users/:id/edit' => 'users#edit', as: :edit_user
+  patch 'users/:id' => 'users#update'
+  delete 'users/:id' => 'users#destroy'
 
   get '/login'     => 'sessions#new'
   post '/login'    => 'sessions#create'

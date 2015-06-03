@@ -3,24 +3,25 @@ You are logged in as <%= current_user.first_name%> <%= link_to 'Log Out', logout
 <% end %>
 
 <h1> Title: <%= @movie.title %> </h1>
-
-<p> <%= image_tag @movie.image%> </p>
+<p><%= image_tag @movie.image.url(:large)%></p>
 <br>
 <p> Year release: <%= @movie.year%> </p>
 <br>
 <p> Plot: <%= @movie.plot%> </p>
 <br>
 
+ <%= link_to "Delete this movie", movie_path, method: :delete, data: { confirm: "R u sure?"} %>
+
+
 <h2>Reviews</h2>
 <%= render @movie.reviews %>
-
 
 
 <h2>Add a review:</h2>
 <%= render 'reviews/form' %>
 
  
-<!-- <%= link_to 'Edit', edit_movie_path(@movie) %> -->
+<%= link_to 'Edit', edit_movie_path(@movie) %> 
 
 <%= link_to 'Home', root_path %>|
 <%= link_to 'Back to Movie List', movies_path %>
@@ -28,5 +29,5 @@ You are logged in as <%= current_user.first_name%> <%= link_to 'Log Out', logout
 
  <br>
 
-<!-- <%= link_to "Delete this movie", movies_path, method: :delete, data: { confirm: "R u sure?"} %> -->
+
 

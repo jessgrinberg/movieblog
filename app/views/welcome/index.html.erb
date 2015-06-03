@@ -8,13 +8,20 @@
 
 	<%= link_to 'LOG OUT!', logout_path, method: :delete %>
 
-<%else %>
-	<%= link_to 'SIGN UP', users_new_path %>
-	<br>
+
+
+
+<%else%>
 	<br>
 	<%= link_to 'SIGN IN', login_path%>
+
+	<%= link_to 'SIGN UP', users_new_path %>
+	<br>
+
+
 <%end%>
 
 <br>
 <br>
 <button><%= link_to 'Movies List', movies_path %></button>
+
