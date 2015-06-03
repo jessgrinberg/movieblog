@@ -10,8 +10,24 @@ You are logged in as <%= current_user.first_name%> <%= link_to 'Log Out', logout
 <p> Email: <%= @user.email%> </p>
 <br>
 
+<ul>
+List of reviews:
+ <% @user.reviews.each do |review|%>
+ 	<li>
+
+ 	My movie:<%= review.movie.title %> |
+ 	My review:<%= review.body %>
+ 		
+	</li>
+
+<%end%>
+
+</ul>
+
 <%= link_to 'Edit', edit_user_path(@user) %> 
 
  <%= link_to "Delete your profile", root_path, method: :delete, data: { confirm: "R u sure?"} %>
 
-
+<%= link_to 'Home', root_path %>|
+<br>
+<%= link_to 'Back to Movie List', movies_path %>
