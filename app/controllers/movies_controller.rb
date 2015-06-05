@@ -1,4 +1,7 @@
 class MoviesController < ApplicationController
+	#before_action :authorized?
+
+	before_action :authorized?, except: :index
 
 	def home
 	end
@@ -17,6 +20,7 @@ class MoviesController < ApplicationController
 
 	def create
 		@movie = Movie.new(movie_params)
+		#movie.user = current_user
 		if @movie.save
 			redirect_to movies_path
 		else
@@ -35,7 +39,6 @@ class MoviesController < ApplicationController
 		else
   			render :edit
 		end
-
 	end
 
 	def destroy
