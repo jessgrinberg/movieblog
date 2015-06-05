@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
     validates :first_name, length: { minimum: 2}
     validates :last_name, length: { minimum: 3}
     validates :password, length: { in: 6..20 }
+    validates :first_name, :last_name, :email, :avatar, presence: true
 
 end
