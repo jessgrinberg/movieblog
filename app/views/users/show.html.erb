@@ -28,7 +28,9 @@ List of reviews:
 
 <%= link_to 'Edit', edit_user_path(@user) %> 
 
- <%= link_to "Delete your profile", root_path, method: :delete, data: { confirm: "R u sure?"} %>
+
+<%= link_to "Delete your profile", user_path, method: :delete, 
+												data: { confirm: "R u sure?"} %>
 
 <%= link_to 'Home', root_path %>|
 <br>

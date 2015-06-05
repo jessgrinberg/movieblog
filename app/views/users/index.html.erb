@@ -5,10 +5,15 @@
 
 <% @users.each do |user| %>
 <ul>
-<%= user.first_name %>
+<%=user.first_name%>
 <%= user.last_name %>
+<%= user.email %>
+<%= link_to user do %>
+<p><%= image_tag user.avatar.url(:small)%></p>
+<% end %>
 
 </ul>
 
 
 <%end%>
+

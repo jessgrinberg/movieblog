@@ -4,9 +4,7 @@
 
 	<ul>
 		<p>Title: <%= m.title %></p>
-		<p> <%#= image_tag m.image, :size => "80x80" %></p>
-		<p><%#= image_tag @movie.image.url(:large)%></p>
-				<p> <%= image_tag m.image.url(:small) %></p>
+		<p> <%= image_tag m.image.url(:small) %></p>
 		<p> Year: <%= m.year %></p>
 		<p> Plot: <%= m.plot %></p>
 
@@ -19,7 +17,5 @@
 	<br>
 
 	<%= link_to 'Home', root_path %>
-
-	
 
 <%= link_to "Add a new movie!", new_movie_path %> 

@@ -11,7 +11,8 @@ You are logged in as <%= current_user.first_name%> <%= link_to 'Log Out', logout
 <p> Plot: <%= @movie.plot%> </p>
 <br>
 
- <%= link_to "Delete this movie", movie_path, method: :delete, data: { confirm: "R u sure?"} %>
+ <%= link_to "Delete this movie", movie_path, method: :delete, 
+ 												data: { confirm: "R u sure?"} %>
 
 
 <h2>Reviews</h2>

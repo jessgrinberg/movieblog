@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   delete 'movies/:id' => 'movies#destroy'
 
   resources :movies do
-  resources :reviews, only: [:create, :edit, :destroy]
+    resources :reviews, only: [:index, :create, :edit, :destroy]
   end
 
 
@@ -51,9 +51,7 @@ Rails.application.routes.draw do
 #                   PUT    /movies/:id(.:format)                        movies#update
 #                   DELETE /movies/:id(.:format)                        movies#destroy
 
-
-
-  get "users" => "welcome#index"
+  get "users" => "users#index"
   get "users/new" => "users#new"
   get 'users/:id' => 'users#show', as: :user
   post 'users/' => 'users#create'

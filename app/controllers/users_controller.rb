@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	before_action :current_user, only: [:index, :edit, :update, :destroy]
 
 	#include SessionsHelper
 	#note from class today
@@ -32,7 +33,6 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find(params[:id])
-
 	end
 
 	def update
@@ -42,12 +42,12 @@ class UsersController < ApplicationController
 		else
   			render :edit
 		end
-
 	end
 
 	def destroy
 		@user = User.find(params[:id])
 		@user.destroy
+		 # redirect_to login_path
 		redirect_to root_path
 	end
 
