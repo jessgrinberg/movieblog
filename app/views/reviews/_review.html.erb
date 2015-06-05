@@ -10,6 +10,10 @@
   <%= review.body %>
 </p>
 
+<% if review.user == current_user %>
+		<%= link_to 'edit review', edit_movie_review_path(@movie,review) %>
+	<% end %>
+
 <p>
   <%= link_to 'Destroy Review', [review.movie, review],
                method: :delete,

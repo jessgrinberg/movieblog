@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   delete 'movies/:id' => 'movies#destroy'
 
   resources :movies do
-  resources :reviews
+  resources :reviews, only: [:create, :edit, :destroy]
   end
 
 

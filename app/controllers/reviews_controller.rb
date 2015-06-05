@@ -1,12 +1,31 @@
 class ReviewsController < ApplicationController
-	# def create
- #    @movie = Movie.find(params[:movie_id])
- #    @review = @movie.reviews.create(review_params)
- #    @review.user = current_user
- 
- #    #@review.user_id =  @current_user.first_name
- #    redirect_to movie_path(@movie)
- #  end
+
+ # def index
+ #  @reviews = Review.all
+ # end
+
+ # def show
+ #  @review = Review.find(params[:id])
+ # end
+
+ # def new
+ #  @review = Review.new
+ # end
+
+  #  def edit
+  #   @review = Review.find(params[:id])
+  #   redirect_to movie_path(Movie.find(params[:movie_id])) #unless @comment.user_id == current_user
+  # end
+
+  # def update
+  #   review = Review.find(params[:id])
+  #   if @review.user == current_user
+  #     review.update_attributes(review_params)
+  #   else
+  #     redirect_to movies_path
+  #   end
+  # end
+
 
  def create
   review = Review.new(review_params)
@@ -20,6 +39,8 @@ class ReviewsController < ApplicationController
     render :new
   end
 end
+
+
 
    def destroy
     @movie = Movie.find(params[:movie_id])
