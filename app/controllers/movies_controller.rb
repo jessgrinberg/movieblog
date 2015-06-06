@@ -48,9 +48,11 @@ class MoviesController < ApplicationController
 		@user = Movie.find(params[:id]).user
 		if @user == current_user
 		@movie.destroy
+		flash[:notice] = "Your movie has been destroyed."
 	end
 		redirect_to movies_path
 	end
+
 
 
 

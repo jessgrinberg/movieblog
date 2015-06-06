@@ -31,10 +31,8 @@ You are logged in as <%= current_user.first_name%> <%= link_to 'Log Out', logout
 
 <br>
 
-<%#= link_to "Delete your movie", movies_path(@movie), method: :delete, 
-												data: { confirm: "R u sure?"} %>
-
 <% if @movie.user == current_user %>
+
 <%= link_to "Delete this movie", movie_path(@movie), method: :delete, 
 									data: { confirm: "R u sure?"} %>
 <%end%>
