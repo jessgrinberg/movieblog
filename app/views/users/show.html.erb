@@ -14,15 +14,15 @@ You are logged in as <%= current_user.first_name%> <%= link_to 'Log Out', logout
 
 <ul>
 <h2>List of Movies:</h2>
- <%# @movies.each do |m|%>
+ <% @user.movies.each do |m|%>
  	<li>
 
-<p> Title: <%#= m.title %> </p>
+<p> Title: <%= m.title %> </p>
 
  		
 	</li>
 
-<%#end%>
+<%end%>
 
 </ul>
 
