@@ -4,8 +4,11 @@ class SessionsController < ApplicationController
 
 		if user && user.authenticate(params[:login][:password])
 		session[:user_id] = user.id.to_s 
-			redirect_to users_path
+		flash[:notice] = "#{user.first_name} have successfully logged in."
+			#redirect_to users_path
+			redirect_to root_path
 		else
+			flash[:notice] = "Please enter your correct information to log in"
 			render :new 
 		end
 	end
