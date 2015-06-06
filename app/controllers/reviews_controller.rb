@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
 
+# before_action :current_user, only
 
  def index
   @reviews = Review.all
@@ -27,9 +28,6 @@ class ReviewsController < ApplicationController
  #    end
  #  end
 
-
-
-
  def create
   review = Review.new(review_params)
   movie = Movie.find(params[:movie_id])
@@ -44,16 +42,24 @@ class ReviewsController < ApplicationController
 end
 
 
-
    def destroy
     @movie = Movie.find(params[:movie_id])
     @review = @movie.reviews.find(params[:id])
-    @review.destroy
-    redirect_to movie_path(@movie)
+    if @review.user == current_user 
+        @review.destroy
+        flash[:notice] = "Your review has been destroyed."
+       redirect_to movie_path(@movie)
+
+     else
+      flash[:alert] = ["You cant delete this ."]
+      redirect_to movie_path(@movie)
+      
+    end
   end
  
   private
     def review_params
       params.require(:review).permit(:body, :user_id)
     end
+
 end

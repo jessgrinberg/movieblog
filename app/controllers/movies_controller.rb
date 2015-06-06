@@ -41,11 +41,34 @@ class MoviesController < ApplicationController
 		end
 	end
 
-	def destroy
+
+
+		def destroy
 		@movie = Movie.find(params[:id])
+		@user = Movie.find(params[:id]).user
+		if @user == current_user
 		@movie.destroy
+	end
 		redirect_to movies_path
 	end
+
+
+
+  #  def destroy
+  #   @movie = Movie.find(params[:movie_id])
+
+  #   if @movie.user == current_user 
+  #       @movie.destroy
+  #       flash[:notice] = "Your review has been destroyed."
+  #      redirect_to movie_path(@movie)
+
+  #    else
+  #     flash[:alert] = ["You cant delete this ."]
+  #     redirect_to movie_path(@movie)
+      
+  #   end
+  # end
+
 
 
 
