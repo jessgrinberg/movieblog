@@ -1,34 +1,80 @@
-<h1><%= link_to 'Movies Something', root_path %></h1>
+<!-- <nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+      <div class="navbar-header">
+  	     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+  	        <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+</button> -->
+<!-- <p class="navbar-brand"> --><%#= link_to 'Movies Something', root_path %><!-- </p> -->
+<!--   </div>
+   <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav"> -->
+<%#if current_user%>
+<!-- 	You are logged in as  --><%#= current_user.first_name if current_user %>
+	<!-- <li> --><%#= link_to 'LOG OUT!', logout_path, method: :delete %><!-- </li> -->
+	<!-- <li> --><%#= link_to 'Profile', user_path(current_user)%><!-- </li> -->
+<%#else%>
+<!-- 	<li><ul class="nav navbar-nav"></ul> -->
+	<%#= link_to 'Sign In', login_path%>
+	<!-- <li> --><%#= link_to 'Sign Up', users_new_path %><!-- </li> -->
+<!-- 	</ul> -->
+<%#end%>
+ 		<!-- </div> --><!--/.nav-collapse -->
+<!--     </div>
+</nav>
+<h2>This is my Welcome Page</h2> -->
 
-
-<h2>This is my Welcome Page</h2>
-
-<%if current_user%>
-	You are logged in as <%= current_user.first_name if current_user %>
-
-	<%= link_to 'LOG OUT!', logout_path, method: :delete %>
-
-	<%= link_to 'Profile', user_path(current_user)%>
-
-
-<%else%>
-	<br>
-	<%= link_to 'SIGN IN', login_path%>
-
-	<%= link_to 'SIGN UP', users_new_path %>
-	<br>
-
-
-<%end%>
-
-<br>
-<br>
-<button><%= link_to 'Movies List', movies_path %></button>
+<%#= link_to 'Movies List', movies_path, :class => "btn btn-default" %>
 
 <!-- <div id="address-map" style="width: 100%; height: 400px;"></div>
  -->
+<nav class=" navbar navbar-default navbar-static-top" >
+	<div class="container">
 
 
+			<div class = 'row'>
+				<div class='col-md-12'><h1>Movie Something</h1></div>
+			<ul class="nav navbar-nav navbar-right"> 
+				<%if current_user%>
+				 Hello <%= current_user.first_name if current_user %>
+						<li><%= link_to 'Profile', user_path(current_user)%> </li> 
+						<li> <%= link_to 'Log Out', logout_path, method: :delete %> </li> 
+				<%else%>
+					<!-- <li><ul class="nav navbar-nav"></ul>  -->
+					<li><%= link_to 'Sign In', login_path%></li> 
+					<li><%= link_to 'Sign Up', users_new_path %></li> 
+				</ul> 
+			<%end%>
+	</div>	
+	
+</nav>
+
+	</div>	
+	<div class = 'row text-center well-lg'>
+		<div class='col-md-6'><h2>Welcome Page</h2>
+		     <p class ='lead'> Thats the welcomepage where there will be more text</p>
+			<div class='col-md-6'><button type = 'button' class ='btn btn-lg btn-default'> <%= link_to 'Movies List', movies_path %></button></div>
+
+		</div>
+
+		<div class='col-md-6'><img src='http://www.c4gallery.com/artist/database/hiroshi-sugimoto/movie-theatres-theaters/sugimoto-trylon-theatre-new-york-1976.jpg' alt='room'/></div>
+	</div>
+
+
+	<div class="row text-center">
+		<div class='col-md-4'>
+			<h3> <i class = 'glyphicon glyphicon-film'></i> List your Movie</h3>
+			<p>balabalabalabalabaabalabalabalababalabalabalabalabaalabaa</p>
+		</div>
+		<div class='col-md-4'>
+			<h3> <i class = 'glyphicon glyphicon-film'></i> Review a Movie</h3>
+			<p>balabalabalabalabalabalabalabalabalabaabalababalabalabalabalabaalabalabaa</p>
+		</div>
+	</div>
+</div>
 
 
 

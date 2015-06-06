@@ -7,22 +7,34 @@
   <%= csrf_meta_tags %>
 
   <!--<script src="http://maps.googleapis.com/maps/api/js"> </script> -->
-
-
   <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
 
 </head>
 <body>
 
-<% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: name %>
-    <% end -%>
+
+<%# flash.each do |name, msg| -%>
+      <%#=content_tag :div, msg, class: name %>
+    <%# end %>
+
+     <div class="container" style="padding-top:60px;">
+    <%#= flash.inspect %>
+    <% if flash[:alert] %>
+      <% flash[:alert].each do |message| %>
+        <div class="alert alert-danger" role="alert"><%= message %></div>
+      <% end %>
+    <% end %>
+    <% if flash[:notice] %>
+      <div class="alert alert-info" role="alert"><%= flash[:notice] %></div>
+    <% end %>
+
+
+
 
 
 <%= yield %>
 
+</div>
+
 </body>
 </html>
-
-

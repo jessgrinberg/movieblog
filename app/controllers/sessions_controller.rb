@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 			#redirect_to users_path
 			redirect_to root_path
 		else
-			flash[:notice] = "Please enter your correct information to log in"
+		flash[:alert] = ["Please enter your correct information to log in"]
 			render :new 
 		end
 	end
@@ -21,3 +21,4 @@ class SessionsController < ApplicationController
 
 end
 
+  
