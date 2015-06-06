@@ -6,19 +6,23 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-  <script src="http://maps.googleapis.com/maps/api/js"> </script>
+  <!--<script src="http://maps.googleapis.com/maps/api/js"> </script> -->
 
-  
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 
 </head>
 <body>
 
-
+<% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
 
 
 <%= yield %>
 
 </body>
 </html>
+
+
