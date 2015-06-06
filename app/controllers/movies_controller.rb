@@ -22,6 +22,7 @@ class MoviesController < ApplicationController
 		@movie = Movie.new(movie_params)
 		@movie.user = current_user
 		if @movie.save
+			flash[:notice] = "Your movie has been added."
 			redirect_to movies_path
 		else
 			render :new
@@ -35,6 +36,7 @@ class MoviesController < ApplicationController
 	def update
 		@movie = Movie.find(params[:id])
 		if @movie.update_attributes(movie_params)
+			flash[:notice] = "Your movie has been updated."
   			redirect_to movies_path
 		else
   			render :edit
