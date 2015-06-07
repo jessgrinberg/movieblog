@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def authorized?
   	redirect_to login_path unless current_user
-  	flash[:alert] = ["Please login to see movie list"]
+
   end
 
 end

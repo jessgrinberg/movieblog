@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	before_action :current_user, only: [:index, :edit, :update, :destroy]
 
+
 	#include SessionsHelper
 	#note from class today
 	# before_action :logged_in? only; :index
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
 
 	 def show
    		 @user = User.find(params[:id])
+   		 
   	end
 
 	def new
