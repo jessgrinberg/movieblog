@@ -2,6 +2,7 @@ class MoviesController < ApplicationController
 	#before_action :authorized?
 
 	before_action :authorized?, except: :index
+	
 
 	def home
 	end

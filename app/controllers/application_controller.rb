@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   def authorized?
-  	redirect_to root_path unless current_user
+  	redirect_to login_path unless current_user
+  	flash[:alert] = ["Please login to see movie list"]
   end
 
 end
