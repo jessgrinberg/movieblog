@@ -35,10 +35,13 @@ class MoviesController < ApplicationController
 
 	def update
 		@movie = Movie.find(params[:id])
-		if @movie.update_attributes(movie_params)
+		@user = Movie.find(params[:id]).user
+		if @user == current_user
+			@movie.update_attributes(movie_params)
 			flash[:notice] = "Your movie has been updated."
   			redirect_to movies_path
 		else
+			flash[:alert] = ["You cant update this ."]
   			render :edit
 		end
 	end

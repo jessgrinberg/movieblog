@@ -42,13 +42,13 @@ class UsersController < ApplicationController
 			flash[:notice] = "Your profile has been updated."
   			redirect_to user_path
 		else
+			 flash[:alert] = ["You cant update this ."]
   			render :edit
 		end
 	end
 
 	def destroy
 		@user = User.find(params[:id])
-		# @user.movies.destroy_all
 		@user.movies.destroy_all
 		@user.reviews.destroy_all
 		@user.destroy
