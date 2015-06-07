@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			session[:user_id] = @user.id.to_s
+			flash[:notice] = "Your profile has been created."
 			redirect_to users_path 
 		else
 			render :new
@@ -38,6 +39,7 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		if @user.update_attributes(user_params)
+			flash[:notice] = "Your profile has been updated."
   			redirect_to user_path
 		else
   			render :edit
@@ -46,7 +48,11 @@ class UsersController < ApplicationController
 
 	def destroy
 		@user = User.find(params[:id])
+		# @user.movies.destroy_all
+		@user.movies.destroy_all
+		@user.reviews.destroy_all
 		@user.destroy
+		flash[:notice] = "Your profile has been deleted."
 		redirect_to root_path
 	end
 
