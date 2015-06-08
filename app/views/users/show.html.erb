@@ -1,3 +1,4 @@
+<%= render 'welcome/nav' %>
 
 <% if current_user %>
 You are logged in as <%= current_user.first_name%> <%= link_to 'Log Out', logout_path, method: :delete %>
@@ -22,6 +23,16 @@ You are logged in as <%= current_user.first_name%> <%= link_to 'Log Out', logout
 <p><%= image_tag @user.avatar.url(:large)%></p>
 
 <br>
+
+
+
+<div class="list-group">
+  <a href="#" class="list-group-item active">
+    <h4 class="list-group-item-heading">List group item heading</h4>
+    <p class="list-group-item-text">...</p>
+  </a>
+</div>
+
 
 <ul>
 <h2>List of Movies:</h2>
