@@ -1,19 +1,22 @@
 <%= form_for([@movie, @movie.reviews.build]) do |f| %>
 
-  <p>
-    <%= f.label :review%><br>
+
+
+<div class="form-group">
     <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+</div>
+
+   <%=  f.submit 'Post', :class =>'btn btn-md btn-block' %>
+
 <% end %>
 
 <%#= form_for [@movie, Review.new] do |f| %>
-    <div>
+   
         <%#= f.label :body, "New Review:" %>
         <%#= f.text_area :body %>
-    </div>
-    <br>
+</br>
+
     <%#= f.submit "Add your Review!" %>
 <%# end %>
+
+

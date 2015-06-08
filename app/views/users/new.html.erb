@@ -17,12 +17,12 @@
 
     <div class="form-group">
     <%#= f.label :avatar %>
-    <%= f.file_field :avatar, :placeholder => "Upload your avatar", class:"form-control" %>
+    <%= f.file_field :avatar, :label =>"avatar", :placeholder => "Upload your avatar", class:"form-control" %>
   </div>
 
   <div class="form-group">
     <%#= f.label :password %>
-     <%= f.password_field :password, :placeholder => "Password", class:"form-control" %>
+     <%= f.password_field :password, :placeholder => "Password (6 characters minimum)", class:"form-control" %>
   </div>
   <div class="form-group">
     <%#= f.label :password_confirmation %>

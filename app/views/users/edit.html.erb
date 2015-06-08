@@ -1,38 +1,37 @@
+
+
 <%= render 'welcome/nav' %>
 
-<h1>Edit your profile</h1>
-
 <%= form_for @user do |f| %>
-  <div>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+  <div class="form-group"> 
+    <%#= f.label :first_name %> 
+    <%= f.text_field :first_name, :placeholder => "First Name",class:"form-control" %>
   </div>
 
-   <div>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+   <div class="form-group ">
+    <%#= f.label :last_name %>
+    <%= f.text_field :last_name, :placeholder => "Last Name", class:"form-control" %>
   </div>
-  <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-
-    <div>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+  <div class="form-group">
+    <%#= f.label :email %>
+    <%= f.text_field :email, :placeholder => "E-mail", class:"form-control" %>
   </div>
 
-  <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <div class="form-group">
+    <%#= f.label :avatar %>
+    <%= f.file_field :avatar, :label =>"avatar", :placeholder => "Upload your avatar", class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%#= f.label :password %>
+     <%= f.password_field :password, :placeholder => "Password", class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%#= f.label :password_confirmation %>
+    <%= f.password_field :password, :placeholder => "Confirm your password", class:"form-control" %>
   </div>
   <div>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div>
-    <%= f.submit "Save your changes profile"%>
+    <%=  f.submit 'Save', :class =>'btn btn-lg btn-block' %>
   </div>
 <% end %>
 
-<%= link_to 'Home', root_path %>

@@ -1,23 +1,19 @@
 
-<p>
-  <strong>User:</strong>
-   <%= review.user.first_name %>
 
-</p>
- 
-<p>
-  <strong>Review:</strong>
-  <%= review.body %>
-</p>
 
-<p><%= review.date_published %></p>
-
-<%# if review.user == current_user %>
-		<%#= link_to 'edit review', edit_movie_review_path(@movie,review) %>
-	<%# end %>
-
-<p>
-  <%= link_to 'Destroy Review', [review.movie, review],
+<div class="list-group">
+  <a href="#" class="list-group-item active">
+    <h4 class="list-group-item-heading"><%= review.user.first_name %> wrote at <%= review.date_published %></h4>
+    <p class="list-group-item-text"> <%= review.body %>    </p>
+  
+   <%= link_to 'X', [review.movie, review],
                method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
+               data: { confirm: 'Are you sure?' }, :class =>'btn btn-smbtn-block' %>
+           
+               </a>
+</div>
+
+
+
+
+

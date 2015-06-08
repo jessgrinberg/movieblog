@@ -1,8 +1,8 @@
 <%= render 'welcome/nav' %>
 
-<% if current_user %>
-You are logged in as <%= current_user.first_name%> <%= link_to 'Log Out', logout_path, method: :delete %>
-<% end %>
+<%# if current_user %>
+ <%#= current_user.first_name%> <%#= link_to 'Log Out', logout_path, method: :delete %>
+<%# end %>
 
 
 <div class="row">
@@ -10,64 +10,38 @@ You are logged in as <%= current_user.first_name%> <%= link_to 'Log Out', logout
     <a href="#" class="thumbnail">
      <%= image_tag @user.avatar.url(:large)%>
     </a>
-  </div>
-  ...
 </div>
+<h3> <%= @user.first_name %> <%= @user.last_name%> </h3>
+<p>  <%= @user.email%> </p>
 
-<p> First Name: <%= @user.first_name %> </p>
-<br>
-<p> Last Name: <%= @user.last_name%> </p>
-<br>
-<p> Email: <%= @user.email%> </p>
-<br>
-<p><%= image_tag @user.avatar.url(:large)%></p>
-
-<br>
-
+  </div>
 
 
 <div class="list-group">
   <a href="#" class="list-group-item active">
-    <h4 class="list-group-item-heading">List group item heading</h4>
-    <p class="list-group-item-text">...</p>
+    <h4 class="list-group-item-heading">Movies Published:</h4>
+     <% @user.movies.each do |m|%>
+    <p class="list-group-item-text"><%= m.title %></p>
+    <%end%>
   </a>
 </div>
 
+<div class="list-group">
+  <a href="#" class="list-group-item active">
+    <h4 class="list-group-item-heading">Reviews Published:</h4>
+     <% @user.reviews.each do |review|%>
+    <p class="list-group-item-text"><%= review.movie.title %> : <%= review.body %> </p>
+    <%end%>
+  </a>
+</div>
 
-<ul>
-<h2>List of Movies:</h2>
- <% @user.movies.each do |m|%>
- 	<li>
-
-<p> Title: <%= m.title %> </p>
-
- 		
-	</li>
-
-<%end%>
-
-</ul>
-
-<ul>
-<h2>List of reviews:</h2>
- <% @user.reviews.each do |review|%>
- 	<li>
-
- 	My movie:<%= review.movie.title %> |
- 	My review:<%= review.body %>
- 		
-	</li>
-
-<%end%>
-
-</ul>
-
-<%= link_to 'Edit', edit_user_path(@user) %> 
+<nav>
+  <ul class="pager">
+    <li><%= link_to 'Edit Your Profile', edit_user_path(@user) %> </li>
+    <li><%= link_to "Delete your profile", user_path, method: :delete, 
+                        data: { confirm: "R u sure?"} %></li>
+  </ul>
+</nav>
 
 
-<%= link_to "Delete your profile", user_path, method: :delete, 
-												data: { confirm: "R u sure?"} %>
 
-<%= link_to 'Home', root_path %>|
-<br>
-<%= link_to 'Back to Movie List', movies_path %>

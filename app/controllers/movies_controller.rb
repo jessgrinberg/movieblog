@@ -1,7 +1,8 @@
 class MoviesController < ApplicationController
 	#before_action :authorized?
 
-	before_action :authorized?, except: :index
+	before_action :authorized?
+	# , except: :index
 	
 
 	def home
@@ -42,12 +43,10 @@ class MoviesController < ApplicationController
 			flash[:notice] = "Your movie has been updated."
   			redirect_to movies_path
 		else
-			flash[:alert] = ["You cant update this ."]
+			flash[:alert] = ["You cant update this"]
   			render :edit
 		end
 	end
-
-
 
 		def destroy
 		@movie = Movie.find(params[:id])
@@ -55,7 +54,7 @@ class MoviesController < ApplicationController
 		if @user == current_user
 		@movie.destroy
 		flash[:notice] = "Your movie has been destroyed."
-	end
+	 end
 		redirect_to movies_path
 	end
 
