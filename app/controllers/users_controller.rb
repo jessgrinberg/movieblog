@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			session[:user_id] = @user.id.to_s
-			flash[:notice] = "Your profile has been created."
+			flash[:success] = "You have succesfully sign up"
 			redirect_to users_path 
 		else
 			render :new
