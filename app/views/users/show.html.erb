@@ -13,8 +13,8 @@
 </div>
 <h3> <%= @user.first_name %> <%= @user.last_name%> </h3>
 <p>  <%= @user.email%> </p>
-
-  </div>
+<p>  Menber since: <%= @user.created_at%> </p>
+</div>
 
 
 <div class="list-group">
@@ -43,5 +43,23 @@
   </ul>
 </nav>
 
+<h2>Friends</h2>
+<ul>
+  <% for friendship in @user.friendships %>
+    <li>
+      <%=h friendship.friend.first_name %>
+      (<%= link_to "remove", friendship, :method => :delete %>)
+    </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Find Friends", users_path %></p>
+
+<h2>Friended by Users</h2>
+<ul>
+  <% for user in @user.inverse_friends %>
+    <li><%=h user.first_name %></li>
+  <% end %>
+</ul>
 
 
