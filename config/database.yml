@@ -39,7 +39,7 @@ development:
 
 test:
   <<: *default
-  database: blog_test
+  database: travis-ci-test
 
 production:
   <<: *default
