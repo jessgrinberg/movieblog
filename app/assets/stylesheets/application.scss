@@ -2,10 +2,14 @@
 @import "bootstrap";
 
 body {
-	font-family: windsor light;
+	font-family: windsor;
+  font-weight: 300;
+  text-transform: none;
 	padding-top: 100px; 
-	font-size: 16px;
-  	line-height: 1.4;
+	font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: normal;
+  line-height: 1.5rem;
 }
 
 .alert {
@@ -23,7 +27,7 @@ body {
 }
 .navbar-default .navbar-brand {
   color: #FFFFFF;
-  font-size: 26px;
+  font-size: 28px;
   padding: 25px 15px;
 }
 
@@ -155,4 +159,10 @@ ul {
 	color: #000000;
 }
 
+
+a:-webkit-any-link {
+  color: -webkit-link;
+  text-decoration: none;
+  cursor: auto;
+}
 
