@@ -43,6 +43,6 @@ test:
 
 production:
   <<: *default
-  database: blog_production
-  username: awesome_blog
-  password: <%= ENV['AWESOME_BLOG_DATABASE_PASSWORD'] %>
+  database: movieblog_production
+  username: rails
+  password: <%= ENV['MOVIEBLOG_DATABASE_PASSWORD'] %>
