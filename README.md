@@ -8,13 +8,14 @@ Phirst motion is a rails app, allowing users to post movies, get reviews and fol
 This project has been created to allow users to list their premiere events, get reviews and network.
 
 ##Techs Used
-*Rails 4 app with PostgreSQL database
-*4 models
-*Full CRUD functionality
-*Authentication by-hand, using BCrypt
-*RESTful routes
-*Bootstrap/SASS
-
+```
+Rails 4 app with PostgreSQL database
+4 models
+Full CRUD functionality
+Authentication by-hand, using BCrypt
+RESTful routes
+Bootstrap/SASS
+```
 
 ##History
 
