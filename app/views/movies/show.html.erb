@@ -5,6 +5,8 @@
 <%#= link_to 'Profile', user_path(current_user)%>
 <%# end %>
 
+<div class ="container">
+
 <h1> Title: <%= @movie.title %> </h1>
 <p><%= image_tag @movie.image.url(:large)%></p>
 <br>
@@ -35,3 +37,4 @@
 	<li><%= link_to 'Back to Movie List', movies_path %></li>
 </ol>
 
+</div>

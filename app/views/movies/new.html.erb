@@ -1,5 +1,7 @@
 <%= render 'welcome/nav' %>
 
+<div class ="container">
+
 <h1> Add your Movie</h1>
 
 <%= form_for @movie do |f| %>
@@ -27,7 +29,8 @@
 	  <%=  f.submit 'Save', :class =>'btn btn-lg btn-block' %>
 
 <% end %>
-	
+
+</div>
 
 
 

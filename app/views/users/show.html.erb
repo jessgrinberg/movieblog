@@ -4,7 +4,7 @@
  <%#= current_user.first_name%> <%#= link_to 'Log Out', logout_path, method: :delete %>
 <%# end %>
 
-
+<div class="container">
 <div class="row">
   <div class="col-xs-6 col-md-3">
     <a href="#" class="thumbnail">
@@ -13,7 +13,7 @@
 </div>
 <h3> <%= @user.first_name %> <%= @user.last_name%> </h3>
 <p>  <%= @user.email%> </p>
-<p>  Menber since: <%= @user.created_at%> </p>
+<p>  Member since: <%= @user.created_at%> </p>
 </div>
 
 
@@ -61,5 +61,5 @@
     <li><%=h user.first_name %></li>
   <% end %>
 </ul>
-
+</div>
 

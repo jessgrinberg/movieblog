@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {
+/*body {
 	font-family: windsor;
   font-weight: 300;
   text-transform: none;
@@ -10,6 +10,22 @@ body {
   line-height: 1.4;
   letter-spacing: normal;
   line-height: 1.5rem;
+}*/
+
+html {
+  font-family: windsor light;
+}
+body {
+  font-family: windsor light;
+  padding-top: 100px; 
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+nav {
+  font-family: windsor;
+  font-weight: 300;
+  font-size: 18px;
 }
 
 .alert {
@@ -39,7 +55,7 @@ body {
   color: #ecf0f1;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #FFFFFF;
+  color: #CFCDCD;
   padding-top: 25px;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -104,10 +120,16 @@ color: #925141
 
 
 .btn {
-    background-color: white;
+  background-color: #8B8B8B;
   border-color: #000000;
   color: #000000;
   text-decoration: none;
+  padding-right: 10px;
+  padding-bottom: 0px;
+}
+
+.btn:hover{
+  background-color: #fcff2f;
 }
 
 .btn-lg {
@@ -117,6 +139,7 @@ color: #925141
   line-height: 1.3333333;
   border-radius: 6px;
   text-decoration: none;
+
 }
 
 input[type="submit"].btn-block {
@@ -130,6 +153,7 @@ input[type="submit"].btn-block {
 
 h1 {
 	font-style : italic;
+
 }
 
 div {
@@ -160,8 +184,16 @@ ul {
 }
 
 a:-webkit-any-link {
-  color: -webkit-link;
+  color: black;
   text-decoration: none;
   cursor: auto;
 }
 
+.caption {
+  text-align: center;
+}
+
+.thumbnail {
+  border: 3px solid black;
+  border-radius: 0;
+}
