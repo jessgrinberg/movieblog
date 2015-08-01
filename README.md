@@ -1,7 +1,6 @@
 #Phirst Motion
 
-Phirst motion is a rails app, allowing users to post movies, get reviews and follow signed up users.
-
+Phirst motion is a rails app, allowing users to post movies, get reviews and follow each others to network.
 
 ## Motivation
 
@@ -19,7 +18,7 @@ Bootstrap/SASS
 
 ##History
 
-Early group development stages. (5/22/15)
+Delivered on 05/22/15.
 
 
 ##Heroku
